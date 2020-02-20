@@ -1,5 +1,6 @@
 require 'directors_database'
-
+require 'pry'
+require 'pp'
 # Write a method that, given an NDS creates a new Hash
 # The return value should be like:
 #
@@ -7,10 +8,28 @@ require 'directors_database'
 
 def directors_totals(nds)
   result = {}
-  nil
+  row_index = 0 
+  while row_index < nds.length 
+  
+  name = nds[row_index][:name]
+    
+    result[name] = gross_for_director(row_index)
+  end
+    row_index += 1 
+  
+  result
 end
 
 # Find a way to accumulate the :worldwide_grosses and return that Integer
 # using director_data as input
+
 def gross_for_director(director_data)
+#    binding.pry
+ total = 0 
+  column_index = 0 
+  while column_index < director_data[:movies].length do
+    total += director_data[:movies][column_index][:worldwide_gross]
+    column_index += 1
 end
+total
+end 
