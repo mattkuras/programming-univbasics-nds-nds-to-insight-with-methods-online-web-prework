@@ -13,7 +13,7 @@ def directors_totals(nds)
   
   name = nds[row_index][:name]
     binding.pry 
-    result[name] = gross_for_director(directors_database)
+    result[name] = gross_for_director(nds[row_index])
   end
     row_index += 1 
   
