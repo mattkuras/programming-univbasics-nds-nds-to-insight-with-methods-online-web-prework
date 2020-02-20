@@ -9,7 +9,7 @@ require 'pp'
 def directors_totals(nds)
   result = {}
   row_index = 0 
-  while row_index < nds.length 
+  while row_index < nds.length do 
   
   name = nds[row_index][:name]
     binding.pry 
